@@ -30,10 +30,10 @@
                 header-cell-class-name="table-header"
                 @selection-change="handleSelectionChange"
             >
-                <el-table-column type="selection" width="55" align="center"></el-table-column>
-                <el-table-column prop="id" label="ID" width="55" align="center"></el-table-column>
-                <el-table-column prop="name" label="用户名"></el-table-column>
+                <!-- <el-table-column type="selection" width="55" align="center"></el-table-column> -->
                 <el-table-column prop="mobile" label="电话"></el-table-column>
+                <el-table-column prop="name" label="用户名"></el-table-column>
+                <el-table-column prop="levelStr" label="等级"></el-table-column>
                 <el-table-column prop="account" label="银行账户"></el-table-column>
 
                 <el-table-column label="直接收入">
@@ -66,7 +66,6 @@
                         ></el-image>
                     </template>
                 </el-table-column> -->
-                <el-table-column prop="levelStr" label="等级"></el-table-column>
                 <!-- <el-table-column label="状态" align="center">
                     <template #default="scope">
                         <el-tag

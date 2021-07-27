@@ -17,7 +17,7 @@
           </el-input>
         </el-form-item>
         <el-form-item prop="name">
-          <el-input v-model="param.name" placeholder="昵称">
+          <el-input v-model="param.name" placeholder="姓名">
             <template #prepend>
               <el-button icon="el-icon-user"></el-button>
             </template>

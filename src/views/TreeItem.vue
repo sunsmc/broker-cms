@@ -6,7 +6,7 @@
           <div class="item-name" :class="{'line-bottom':item.children&&item.children.length>0,'line-top':!treeFirst}">
             <div v-if="!treeFirst" class="reduce" @click="delChild(index)">-</div>
             <div>
-              {{item.name}}
+              {{item.name}}({{item.levelStr}})
             </div>
             <div class="plus" @click="addChild(index)">+</div>
           </div>

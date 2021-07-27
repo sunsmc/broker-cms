@@ -79,8 +79,7 @@ export default {
         },
         register() {
             this.$refs.login.validate(valid => {
-
-                this.$message.success(valid+"ssss");
+                console.log(valid);
                 this.$router.push("/register");
             });
         }

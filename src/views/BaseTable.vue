@@ -36,7 +36,25 @@
                 <el-table-column prop="mobile" label="电话"></el-table-column>
                 <el-table-column prop="account" label="银行账户"></el-table-column>
 
-                <el-table-column label="收入">
+                <el-table-column label="直接收入">
+                    <template #default="scope">￥{{ scope.row.directIncome }}</template>
+                </el-table-column>
+                <el-table-column label="一代收入">
+                    <template #default="scope">￥{{ scope.row.firstIncome }}</template>
+                </el-table-column>
+                <el-table-column label="二代收入">
+                    <template #default="scope">￥{{ scope.row.secondIncome }}</template>
+                </el-table-column>
+                <el-table-column label="团队收入">
+                    <template #default="scope">￥{{ scope.row.teamIncome }}</template>
+                </el-table-column>
+                <el-table-column label="商城收入">
+                    <template #default="scope">￥{{ scope.row.shopIncome }}</template>
+                </el-table-column>
+                <el-table-column label="乐研收入">
+                    <template #default="scope">￥{{ scope.row.researchIncome }}</template>
+                </el-table-column>
+                <el-table-column label="总收入">
                     <template #default="scope">￥{{ scope.row.income }}</template>
                 </el-table-column>
                 <!-- <el-table-column label="头像(查看大图)" align="center">

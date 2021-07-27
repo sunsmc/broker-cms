@@ -4,7 +4,7 @@ import Home from "../views/Home.vue";
 const routes = [
     {
         path: '/',
-        redirect: '/dashboard'
+        redirect: '/login'
     }, {
         path: "/",
         name: "Home",
@@ -28,6 +28,15 @@ const routes = [
                 component: () => import (
                 /* webpackChunkName: "table" */
                 "../views/BaseTable.vue")
+            }, {
+                path: "/tree",
+                name: "tree",
+                meta: {
+                    title: '团队图谱'
+                },
+                component: () => import (
+                /* webpackChunkName: "table" */
+                "../views/TreeTest.vue")
             }, {
                 path: "/charts",
                 name: "basecharts",
@@ -125,9 +134,7 @@ const routes = [
         meta: {
             title: '注册'
         },
-        component: () => import (
-        /* webpackChunkName: "login" */
-        "../views/Register.vue")
+        component: () => import ("../views/Register.vue")
     }
 ];
 
@@ -137,9 +144,9 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-    document.title = `${to.meta.title} | vue-manage-system`;
-    const role = localStorage.getItem('ms_username');
-    if (!role && to.path !== '/login') {
+    document.title = `${to.meta.title} | AMS`;
+    const role = localStorage.getItem('username');
+    if (!role && to.path !== '/login' && to.path !== '/register') {
         next('/login');
     } else if (to.meta.permission) {
         // 如果是管理员权限则可进入，这里只是简单的模拟管理员权限而已

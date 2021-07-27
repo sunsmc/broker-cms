@@ -1,8 +1,18 @@
 import request from '../utils/request';
 
+export const server="http://39.103.184.198:8888";
+// export const server = "http://localhost:8888";
+
+export const treeInvoke = phone => {
+    return request({
+        url: server + '/broker/tree/' + phone,
+        method: 'get'
+    });
+};
+
 export const fetchData = query => {
     return request({
-        url: 'http://localhost:8888/broker/list',
+        url: server + '/broker/list',
         method: 'get',
         params: query
     });
@@ -10,15 +20,15 @@ export const fetchData = query => {
 
 export const registerData = param => {
     return request({
-        url: 'http://localhost:8888/broker/register',
+        url: server + '/broker/register',
         method: 'post',
-        params: param
+        data: param
     });
 };
 
 export const login = param => {
     return request({
-        url: 'http://localhost:8888/broker/login',
+        url: server + '/broker/login',
         method: 'post',
         params: param
     });
@@ -26,14 +36,14 @@ export const login = param => {
 
 export const getUserInfo = phone => {
     return request({
-        url: 'http://localhost:8888/broker/'+phone,
+        url: server + '/broker/' + phone,
         method: 'get'
     });
 };
 
 export function exportData() {
     return request({
-        url: 'http://localhost:8888/broker/export',
+        url: server + '/broker/export',
         method: 'get',
         responseType: 'blob'
     });

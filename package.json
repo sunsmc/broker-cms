@@ -15,8 +15,11 @@
         "vue-cropperjs": "^5.0.0",
         "vue-i18n": "^9.0.0",
         "vue-loader-v16": "^16.0.0-beta.5.4",
+        "vue-org-tree": "^0.1.0",
         "vue-router": "~4.0.4",
         "vue-schart": "^2.0.0",
+        "vue-tree-chart": "^1.2.9",
+        "vue-tree-color": "^2.3.2",
         "vuex": "~4.0.0"
     },
     "devDependencies": {
@@ -29,6 +32,8 @@
         "babel-eslint": "~10.1.0",
         "eslint": "~6.8.0",
         "eslint-plugin-vue": "~7.7.0",
+        "less": "^4.1.1",
+        "less-loader": "^10.0.1",
         "sass": "~1.32.8",
         "sass-loader": "~8.0.2",
         "vue-cli-plugin-element-plus": "0.0.13",

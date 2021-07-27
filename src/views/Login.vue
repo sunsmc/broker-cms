@@ -62,14 +62,15 @@ export default {
             this.$refs.login.validate(valid => {
                 if (valid) {
                     login(this.param).then(res => {
-                        console.log(res);
-                        localStorage.setItem("ms_username", this.param.phone);
-                        this.$router.push("/");
-                        this.$message.success("登录成功");
+                        if ( res && res.code==200) {
+                            localStorage.setItem("username", this.param.phone);
+                            this.$message.success("登录成功");
+                            this.$router.push("/dashboard");
+                        }else{
+                            this.$message.success(res.msg);
+                            this.$router.push("/login");
+                        }
                     });
-                    this.$message.success("登录成功");
-                    localStorage.setItem("ms_username", this.param.phone);
-                    this.$router.push("/");
                 } else {
                     this.$message.success("请输入账号和密码");
                     return false;
@@ -77,8 +78,11 @@ export default {
             });
         },
         register() {
-            localStorage.setItem("ms_username", this.param.phone);
-            this.$router.push("/register");
+            this.$refs.login.validate(valid => {
+
+                this.$message.success(valid+"ssss");
+                this.$router.push("/register");
+            });
         }
     }
 };

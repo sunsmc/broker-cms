@@ -19,7 +19,7 @@
                     <el-option key="1" label="广东省" value="广东省"></el-option>
                     <el-option key="2" label="湖南省" value="湖南省"></el-option>
                 </el-select> -->
-                <el-input v-model="query.mobile" placeholder="电话" class="handle-input mr10"></el-input>
+                <el-input v-model="query.search" placeholder="电话" class="handle-input mr10"></el-input>
                 <el-button type="primary" icon="el-icon-search" @click="handleSearch">搜索</el-button>
             </div>
             <el-table
@@ -136,9 +136,10 @@ export default {
     data() {
         return {
             query: {
-                mobile: "",
+                mobile: localStorage.getItem('username'),
                 pageIndex: 1,
-                pageSize: 10
+                pageSize: 10,
+                search: ""
             },
             tableData: [],
             multipleSelection: [],
@@ -205,7 +206,7 @@ export default {
             // document.body.removeChild(link); //下载完成移除元素
             // window.URL.revokeObjectURL(url); //释放掉blob对象
 
-            exportData().then(exceldata=>{
+            exportData(this.query.mobile).then(exceldata=>{
                 let link = document.createElement('a')
                 link.download = '推广者.xlsx'
                 link.style.display = 'none'

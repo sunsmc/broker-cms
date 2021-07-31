@@ -41,9 +41,9 @@ export const getUserInfo = phone => {
     });
 };
 
-export function exportData() {
+export function exportData(phone) {
     return request({
-        url: server + '/broker/export',
+        url: server + '/broker/export/'+phone,
         method: 'get',
         responseType: 'blob'
     });

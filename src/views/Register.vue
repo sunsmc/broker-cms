@@ -23,6 +23,20 @@
             </template>
           </el-input>
         </el-form-item>
+        <el-form-item prop="accountType">
+          <!-- <template #prepend> -->
+          <el-button icon="el-icon-user"></el-button>
+          <!-- </template> -->
+          <el-select v-model="param.accountType" placeholder="归属银行" style="width:80%">
+                <el-option label="工商" value="工商"> </el-option>
+                <el-option label="农业" value="农业"></el-option>
+                <el-option label="中国" value="中国"></el-option>
+                <el-option label="建设" value="建设"></el-option>
+                <el-option label="交通" value="交通"></el-option>
+                <el-option label="招商" value="招商"></el-option>
+          </el-select>
+        </el-form-item>
+
         <el-form-item prop="account">
           <el-input v-model="param.account" placeholder="银行账户">
             <template #prepend>
@@ -74,6 +88,7 @@ export default {
         referrerCode: "",
         password: "",
         account: "",
+        accountType: "",
         name: "",
       },
       rules: {

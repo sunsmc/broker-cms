@@ -1,7 +1,7 @@
 <template>
   <div class="login-wrap">
     <div class="ms-login">
-      <div class="ms-title">后台管理系统</div>
+      <div class="ms-title">业务管理系统1.0</div>
       <el-form
         :model="param"
         :rules="rules"
@@ -25,16 +25,17 @@
         </el-form-item>
         <el-form-item prop="accountType">
           <!-- <template #prepend> -->
-          <el-button icon="el-icon-user"></el-button>
-          <!-- </template> -->
-          <el-select v-model="param.accountType" placeholder="归属银行" style="width:80%">
-                <el-option label="工商" value="工商"> </el-option>
+            <el-button icon="el-icon-user"></el-button>
+            <el-select v-model="param.accountType" placeholder="归属银行" style="width:80%">
+                <el-option label="工商" value="工商"></el-option>
                 <el-option label="农业" value="农业"></el-option>
                 <el-option label="中国" value="中国"></el-option>
                 <el-option label="建设" value="建设"></el-option>
                 <el-option label="交通" value="交通"></el-option>
                 <el-option label="招商" value="招商"></el-option>
           </el-select>
+          <!-- </template> -->
+          
         </el-form-item>
 
         <el-form-item prop="account">

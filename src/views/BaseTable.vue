@@ -51,9 +51,9 @@
                 <el-table-column label="商城收入">
                     <template #default="scope">￥{{ scope.row.shopIncome }}</template>
                 </el-table-column>
-                <el-table-column label="乐研收入">
-                    <template #default="scope">￥{{ scope.row.researchIncome }}</template>
-                </el-table-column>
+                <!-- <el-table-column label="乐研收入"> -->
+                    <!-- <template #default="scope">￥{{ scope.row.researchIncome }}</template> -->
+                <!-- </el-table-column> -->
                 <el-table-column label="总收入">
                     <template #default="scope">￥{{ scope.row.income }}</template>
                 </el-table-column>

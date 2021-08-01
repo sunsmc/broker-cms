@@ -106,10 +106,10 @@
                     </el-table> -->
           <div class="image">
             <div>
-              <p>会员邀请二维码</p>
+              <p>用户注册二维码</p>
             </div>
             <div class="block">
-              <el-image :src="image" name="会员邀请码"></el-image>
+              <el-image :src="image" name="用户注册二维码"></el-image>
             </div>
           </div>
         </el-card>
